@@ -1,26 +1,14 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Diagnostics;
 using System.IO;
-using System.Linq;
-using System.Reflection;
-using System.Text;
-using BaseX;
-using CodeX;
 using FrooxEngine;
-using FrooxEngine.LogiX;
-using FrooxEngine.LogiX.Data;
-using FrooxEngine.LogiX.ProgramFlow;
-using FrooxEngine.UIX;
-using HarmonyLib;
-using NeosModLoader;
-using static Microsoft.IO.RecyclableMemoryStreamManager;
+using ResoniteModLoader;
 
 namespace Simulstart
 {
-    public class Simulstart : NeosMod
+    public class Simulstart : ResoniteMod
     {
         public static ModConfiguration Config;
 
@@ -32,8 +20,8 @@ namespace Simulstart
         private static HashSet<Process> LaunchedProcessesToQuit;
         private static bool shuttingDown = false;
         public override string Author => "Banane9";
-        public override string Link => "https://github.com/Banane9/NeosSimulstart";
-        public override string Name => "Simulstart";
+        public override string Link => "https://github.com/Banane9/ResoniteSimulstart";
+        public override string Name => "0Simulstart";
         public override string Version => "1.1.0";
 
         public override void OnEngineInit()
@@ -46,7 +34,7 @@ namespace Simulstart
             Engine.Current.OnShutdownRequest += _ =>
             {
                 shuttingDown = true;
-                Msg("Closing remaining processes that should be ended with Neos.");
+                Msg("Closing remaining processes that should be ended with Resonite.");
 
                 foreach (var process in LaunchedProcessesToQuit)
                 {

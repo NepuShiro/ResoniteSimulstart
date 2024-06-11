@@ -31,6 +31,6 @@ namespace Simulstart
         public string WorkingDirectory { get; private set; }
 
         public override string ToString()
-            => $"{(Administrator ? "Admin" : "Regular")} ({(KeepOpen ? "independent of Neos" : "closing with Neos")}): {Path} {Arguments}";
+            => $"{(Administrator ? "Admin" : "Regular")} ({(KeepOpen ? "independent of Resonite" : "closing with Resonite")}): {Path} {Arguments}";
     }
 }
